@@ -3,7 +3,7 @@ import './ActivityHeader.css';
 
 const ActivityHeader = () => {
     return (
-        <div>
+        <div className="container1">
             <h2 className="Activity">Activity</h2>
         </div>
     )

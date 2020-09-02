@@ -4,13 +4,13 @@ import './AddImageHeader.css';
 
 const AddImageHeader = (props) => {
     return (
-        <div>
-            <button onClick={props.cancelButton}>Cancel</button>
-            <div>
-                <p>Recents</p>
+        <div className="container">
+            <button className="button" onClick={props.cancelButton}>Cancel</button>
+            <div className="iner-container">
+                <p className="Recents">Recents</p>
                 <MdKeyboardArrowDown />
             </div>
-            <p>Next</p>
+            <button className="Next">Next</button>
         </div>
     )
 }

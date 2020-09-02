@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Poppins:ital,wght@0,400;1,500&display=swap');
+
+.container1 {
+    flex-direction: row;
+    align-items: center;
+    width: 384px;
+    height: 55px;
+    background-color:white;
+    border-bottom: 0.5px solid rgb(233, 233, 233);
+    color: black;
+}
+
+.container1 .Activity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    font-size: large;
+    font-family: 'Poppins', sans-serif;
+}

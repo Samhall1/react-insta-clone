@@ -1,0 +1,18 @@
+
+.personalImage {
+    border-radius: 60%;
+    border: 2px solid rgb(123, 13, 145);
+    height: 40px;
+}
+
+.instaContainer {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.instaContainer p {
+    margin: 0px;
+}

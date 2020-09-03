@@ -1,0 +1,67 @@
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.userDetails {
+    display: flex;
+    flex-direction: row;
+}
+
+.userDetails img {
+    border-radius: 50%;
+    height: 25px;
+    padding: 15px;
+}
+
+.userDetails svg {
+    padding-top: 18px;
+}
+
+.userNameAndLocation{
+    padding-top: 10px;
+    padding-right: 270px;
+}
+
+.userNameAndLocation p:first-child {
+    margin: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.userNameAndLocation p:last-child {
+    margin: 0px;
+    font-size: 12px;
+}
+
+.imagePost {
+    width: 100%;
+    height: auto;
+    
+}
+
+.profileIcons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 5px;;
+}
+
+.profileIcons .icons svg {    
+    padding: 10px 5px;
+}
+
+.postLikes span, .postComments span {
+    font-weight: bold;
+}
+.postLikes p, .postComments p {
+    margin: 0px;
+    
+    padding-left: 10px;
+}
+
+.postComments {
+    border-bottom: 0.5px solid rgb(233, 233, 233);
+    padding: 15px 10px;
+}

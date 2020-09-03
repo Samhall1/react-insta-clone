@@ -1,6 +1,6 @@
 import React from 'react';
 import { CgNametag } from "react-icons/cg";
-import { FiSearch } from "react-icons/fi";
+// import { FiSearch } from "react-icons/fi";
 import './SearchHeader.css';
 
 const SearchHeader = () => {

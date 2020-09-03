@@ -5,9 +5,9 @@ import './ProfileHeader.css';
 
 const ProfileHeader = () => {
     return (
-        <div>
-            <div>
-                <p>Code Nation </p> 
+        <div className="profileHeader">
+            <div className="iner-profileHeader">
+                <p className="userName">Code Nation </p> 
                 <MdKeyboardArrowDown/>
             </div>
             <BiMenu/>

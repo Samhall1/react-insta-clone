@@ -13,3 +13,10 @@
   
 }
 
+.searchImagesContainer {  
+  display: flex;
+  flex-wrap: wrap;
+  align-content:flex-start;
+  margin: 0px;;
+}
+

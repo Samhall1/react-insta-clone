@@ -2,7 +2,7 @@ import React from 'react';
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
-import { GrWaypoint } from "react-icons/gr";
+import { FaTelegramPlane } from "react-icons/fa";
 import { BsBookmark } from "react-icons/bs";
 import './ProfileInfo.css';
 
@@ -23,7 +23,7 @@ const ProfileInfo = (props) => {
                 <div className="icons">
                     <AiOutlineHeart onClick={props.likeButtonHandle}/>
                     <FaRegComment />
-                    <GrWaypoint />
+                    <FaTelegramPlane />
                 </div>
                 <BsBookmark />
             </div>

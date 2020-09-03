@@ -10,6 +10,8 @@ import Header from './components/Header';
 import { myImagesArray } from './components/img/instaImages';
 import InstaStories from './components/InstaStories';
 import ProfileInfo from './components/ProfileInfo';
+import SearchPage from './components/SearchPage';
+import SearchPageImages from './components/SearchPageImages';
 
 class App extends React.Component {
   state = {
@@ -116,7 +118,8 @@ class App extends React.Component {
         randomComment:'Such a nice picture, where was it taken?'
       }
     ],
-    likeButton: 2
+    likeButton: 2,
+    searchPageImg: myImagesArray
   }
 
   switchMainWindowHandler = (event) => {
@@ -183,6 +186,12 @@ class App extends React.Component {
                  />
     });
 
+    const searchPageImg = this.state.searchPageImg.map((image, index) => {
+      return <SearchPageImages
+                  key={index}
+                  searchPageImg={image} />
+    })
+
     let mainWindow = null;
     switch (this.state.activeWindow) {
       case 'home':
@@ -196,7 +205,16 @@ class App extends React.Component {
           
         )
         break;
-    
+        case 'search':
+          mainWindow = (
+            <div>
+              <SearchPage />
+              <div className='searchImagesContainer'>
+                {searchPageImg}
+              </div>
+            </div>
+          )
+          break;
       default:
         break;
     }

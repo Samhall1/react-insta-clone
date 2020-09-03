@@ -1,0 +1,30 @@
+.searchPageButtons  {
+    display:flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+.button1, .button2, .button3 {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.button1 svg, .button2 svg, .button3 svg {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.button1 p, .button2 p, .button3 p {
+    font-size: 15px;
+    margin: 0px;
+}
+
+.searchPageContainer img {
+    height: 275px;
+}

@@ -7,6 +7,9 @@ import AddImageHeader from './components/AddImageHeader';
 import ActivityHeader from './components/ActivityHeader';
 import ProfileHeader from './components/ProfileHeader';
 import Header from './components/Header';
+import { myImagesArray } from './components/img/instaImages';
+import InstaStories from './components/InstaStories';
+import ProfileInfo from './components/ProfileInfo';
 
 class App extends React.Component {
   state = {
@@ -18,7 +21,102 @@ class App extends React.Component {
       <ActivityHeader />,
       <ProfileHeader />
     ],
-    header: <HomeHeader />
+    header: <HomeHeader />,
+    images: myImagesArray,
+    userNames: [
+      {
+        name: 'Sam',
+        image: myImagesArray[0],
+        location: 'Manchester',
+        postImage: myImagesArray[13],
+        firstPerson: 'Silvia',
+        userNameWhoLeftTheComment: 'Silvia',
+        randomComment:'Soo cute'
+      },
+      {
+        name: 'Silvia',
+        image: myImagesArray[1],
+        location: 'Leeds',
+        postImage: myImagesArray[14],
+        firstPerson: 'Adri',
+        userNameWhoLeftTheComment: 'Adri',
+        randomComment:'Cheeky Monkeys'
+
+      },
+      {
+        name: 'Adri',
+        image: myImagesArray[2],
+        location: 'Cambridge',
+        postImage: myImagesArray[15],
+        firstPerson: 'Hamza',
+        userNameWhoLeftTheComment: 'Hamza',
+        randomComment:'Happy Family :)'
+      },
+      {
+        name: 'Danny',
+        image: myImagesArray[3],
+        location: 'Manchester',
+        postImage: myImagesArray[16],
+        firstPerson: 'Donna',
+        userNameWhoLeftTheComment: 'Donna',
+        randomComment:'I think they are sleepy.'
+      },
+      {
+        name: 'Donna',
+        image: myImagesArray[4],
+        location: 'Manchester',
+        postImage: myImagesArray[17],
+        firstPerson: 'Imran',
+        userNameWhoLeftTheComment: 'Imran',
+        randomComment:'What a lovely cat'
+      },
+      {
+        name: 'Hamza',
+        image: myImagesArray[5],
+        location: 'Birmingham',
+        postImage: myImagesArray[18],
+        firstPerson: 'Adri',
+        userNameWhoLeftTheComment: 'Adri',
+        randomComment:'O dear'
+      },
+      {
+        name: 'Imran',
+        image: myImagesArray[6],
+        location: 'Manchester',
+        postImage: myImagesArray[19],
+        firstPerson: 'Sam',
+        userNameWhoLeftTheComment: 'Sam',
+        randomComment:'Is it halloween already??'
+      },
+      {
+        name: 'Jacob',
+        image: myImagesArray[7],
+        location: 'Shaw',
+        postImage: myImagesArray[20],
+        firstPerson: 'Neil',
+        userNameWhoLeftTheComment: 'Neil',
+        randomComment:'Wouldn\'t want to try take that pumpkin from him!!'
+      },
+      {
+        name: 'Neil',
+        image: myImagesArray[8],
+        location: 'Salford',
+        postImage: myImagesArray[21],
+        firstPerson: 'Silvia',
+        userNameWhoLeftTheComment: 'Silvia',
+        randomComment:'Great picture!'
+      },
+      {
+        name: 'Telmo',
+        image: myImagesArray[9],
+        location: 'Stockport',
+        postImage: myImagesArray[22],
+        firstPerson: 'Adri',
+        userNameWhoLeftTheComment: 'Adri',
+        randomComment:'Such a nice picture, where was it taken?'
+      }
+    ],
+    likeButton: 2
   }
 
   switchMainWindowHandler = (event) => {
@@ -50,14 +148,65 @@ class App extends React.Component {
     }
   }
 
-cancelButton = () => {
-  console.log("Button clicked")
-}
+  cancelButton = () => {
+    console.log("Button clicked")
+  };
+
+  likeButtonHandle = () => {
+    console.log("button clicked");
+    this.setState ({
+      ...this.state,
+      likeButton: this.state.likeButton + 1
+    });
+  };
 
   render(){
+    const stories = this.state.userNames.map((item, index) => {
+      return <InstaStories 
+                  key={index} 
+                  images={item.image} 
+                  userName={item.name}/>
+    });
+
+    const instaPost = this.state.userNames.map((item, index) => {
+      return <ProfileInfo
+                key={index}
+                imageUser={item.image}
+                userName={item.name}
+                location={item.location}
+                imagePost={item.postImage}
+                likeButtonHandle={this.likeButtonHandle}
+                allLikes={this.state.likeButton}
+                firstPerson={item.firstPerson}
+                userNameWhoLeftTheComment={item.userNameWhoLeftTheComment}
+                randomComment={item.randomComment}
+                 />
+    });
+
+    let mainWindow = null;
+    switch (this.state.activeWindow) {
+      case 'home':
+        mainWindow = (
+          <div>
+            <div className='instaStoriesContainer'>
+              {stories}
+            </div>
+            {instaPost}
+          </div>
+          
+        )
+        break;
+    
+      default:
+        break;
+    }
+
     return (
       <React.Fragment>
         <Header currentHeader={this.state.header}/>
+        <div className='main'>
+          {mainWindow}
+        </div>
         <Navbar
           clickedBtn={this.switchMainWindowHandler}
           activeBtn={this.state.activeWindow} />

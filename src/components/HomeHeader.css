@@ -11,6 +11,7 @@ header {
     border-bottom: 0.5px solid rgb(233, 233, 233);
     padding: 0px 15px;
     color: black;
+    /* position: sticky; */
 }
 
 .instagram {

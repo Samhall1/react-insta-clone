@@ -12,8 +12,12 @@ import InstaStories from './components/InstaStories';
 import ProfileInfo from './components/ProfileInfo';
 import SearchPage from './components/SearchPage';
 import SearchPageImages from './components/SearchPageImages';
+
 import AddImagePage from './components/AddImagePage';
 import AddImagePageTop from './components/AddImagePageTop';
+
+import ActivityPage from './components/ActivityPage';
+
 
 class App extends React.Component {
   state = {
@@ -36,19 +40,28 @@ class App extends React.Component {
         name: 'Sam',
         image: myImagesArray[0],
         location: 'Manchester',
-        postImage: myImagesArray[13],
-        firstPerson: 'Silvia',
+        postImage: myImagesArray[24],
+        firstPerson: 'Imran',
         userNameWhoLeftTheComment: 'Silvia',
-        randomComment:'Soo cute'
+        randomComment:'Soo cute ❤️'
+      },
+      {
+        name: 'Alex',
+        image: myImagesArray[23],
+        location: 'Manchester',
+        postImage: myImagesArray[17],
+        firstPerson: 'Telmo',
+        userNameWhoLeftTheComment: 'Donna',
+        randomComment:'Awww 🥰'
       },
       {
         name: 'Silvia',
         image: myImagesArray[1],
         location: 'Leeds',
         postImage: myImagesArray[14],
-        firstPerson: 'Adri',
+        firstPerson: 'Sam',
         userNameWhoLeftTheComment: 'Adri',
-        randomComment:'Cheeky Monkeys'
+        randomComment:'Cheeky Monkeys 🙈❤️'
 
       },
       {
@@ -58,7 +71,7 @@ class App extends React.Component {
         postImage: myImagesArray[15],
         firstPerson: 'Hamza',
         userNameWhoLeftTheComment: 'Hamza',
-        randomComment:'Happy Family :)'
+        randomComment:'Happy Family 😊'
       },
       {
         name: 'Danny',
@@ -67,7 +80,7 @@ class App extends React.Component {
         postImage: myImagesArray[16],
         firstPerson: 'Donna',
         userNameWhoLeftTheComment: 'Donna',
-        randomComment:'I think they are sleepy.'
+        randomComment:'I think they are sleepy. 🤔🥱🥱🥱🥱'
       },
       {
         name: 'Donna',
@@ -75,8 +88,8 @@ class App extends React.Component {
         location: 'Manchester',
         postImage: myImagesArray[17],
         firstPerson: 'Imran',
-        userNameWhoLeftTheComment: 'Imran',
-        randomComment:'What a lovely cat'
+        userNameWhoLeftTheComment: 'Danny',
+        randomComment:'What a lovely cat 😍'
       },
       {
         name: 'Hamza',
@@ -84,8 +97,8 @@ class App extends React.Component {
         location: 'Birmingham',
         postImage: myImagesArray[18],
         firstPerson: 'Adri',
-        userNameWhoLeftTheComment: 'Adri',
-        randomComment:'O dear'
+        userNameWhoLeftTheComment: 'Alex',
+        randomComment:'O dear 🙄🙄🙄🙄🙄🙄'
       },
       {
         name: 'Imran',
@@ -94,7 +107,7 @@ class App extends React.Component {
         postImage: myImagesArray[19],
         firstPerson: 'Sam',
         userNameWhoLeftTheComment: 'Sam',
-        randomComment:'Is it halloween already??'
+        randomComment:'Is it Halloween already?? 👻'
       },
       {
         name: 'Jacob',
@@ -102,8 +115,8 @@ class App extends React.Component {
         location: 'Shaw',
         postImage: myImagesArray[20],
         firstPerson: 'Neil',
-        userNameWhoLeftTheComment: 'Neil',
-        randomComment:'Wouldn\'t want to try take that pumpkin from him!!'
+        userNameWhoLeftTheComment: 'Telmo',
+        randomComment:'Wouldn\'t want to try take that pumpkin from him!! 🎃🎃🎃🎃🎃'
       },
       {
         name: 'Neil',
@@ -111,8 +124,8 @@ class App extends React.Component {
         location: 'Salford',
         postImage: myImagesArray[21],
         firstPerson: 'Silvia',
-        userNameWhoLeftTheComment: 'Silvia',
-        randomComment:'Great picture!'
+        userNameWhoLeftTheComment: 'Jacob',
+        randomComment:'Great picture! 👍👍👍👍👍'
       },
       {
         name: 'Telmo',
@@ -120,12 +133,98 @@ class App extends React.Component {
         location: 'Stockport',
         postImage: myImagesArray[22],
         firstPerson: 'Adri',
-        userNameWhoLeftTheComment: 'Adri',
-        randomComment:'Such a nice picture, where was it taken?'
+        userNameWhoLeftTheComment: 'Sam',
+        randomComment:'Such a nice picture, where was it taken? 🥰🥰🥰🥰🥰🥰🥰'
       }
     ],
     likeButton: 2,
-    searchPageImg: myImagesArray
+    searchPageImg: myImagesArray,
+    activityPage: [
+      {
+        activityUserImage: myImagesArray[0],
+        activityUserName: 'Sam',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Ohhh @Hamza, @Adri, @Alex 🥰',
+        activityPostImage: myImagesArray[14]
+      },
+      {
+        activityUserImage: myImagesArray[1],
+        activityUserName: 'Silvia',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Nice 😉',
+        activityPostImage: myImagesArray[15]
+      },
+      {
+        activityUserImage: myImagesArray[2],
+        activityUserName: 'Adri',
+        activityText: 'liked your comment:',
+        activityCommentText: 'You\'re so beautiful ❤️',
+        activityPostImage: myImagesArray[16]
+      },
+      {
+        activityUserImage: myImagesArray[4],
+        activityUserName: 'Danny',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Nice job 👍👍👍👍',
+        activityPostImage: myImagesArray[10]
+      },
+      {
+        activityUserImage: myImagesArray[5],
+        activityUserName: 'Hamza',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Wow 🔥',
+        activityPostImage: myImagesArray[10]
+      },
+      {
+        activityUserImage: myImagesArray[6],
+        activityUserName: 'Imran',
+        activityText: 'liked your comment:',
+        activityCommentText: 'How was your week so far❓ 🧐🙈🙉🙊',
+        activityPostImage: myImagesArray[12]
+      },
+      {
+        activityUserImage: myImagesArray[0],
+        activityUserName: 'Sam',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Ohhh 🥰',
+        activityPostImage: myImagesArray[14]
+      },
+      {
+        activityUserImage: myImagesArray[1],
+        activityUserName: 'Silvia',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Nice 😉',
+        activityPostImage: myImagesArray[15]
+      },
+      {
+        activityUserImage: myImagesArray[2],
+        activityUserName: 'Adri',
+        activityText: 'liked your comment:',
+        activityCommentText: 'You\'re so beautiful ❤️',
+        activityPostImage: myImagesArray[16]
+      },
+      {
+        activityUserImage: myImagesArray[4],
+        activityUserName: 'Danny',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Nice job 👍👍👍👍',
+        activityPostImage: myImagesArray[10]
+      },
+      {
+        activityUserImage: myImagesArray[5],
+        activityUserName: 'Hamza',
+        activityText: 'liked your comment:',
+        activityCommentText: 'Wow 🔥',
+        activityPostImage: myImagesArray[10]
+      },
+      {
+        activityUserImage: myImagesArray[6],
+        activityUserName: 'Imran',
+        activityText: 'liked your comment:',
+        activityCommentText: 'How was your week so far❓ 🧐🙈🙉🙊',
+        activityPostImage: myImagesArray[12]
+      }
+    ]
   }
 
 
@@ -203,10 +302,21 @@ class App extends React.Component {
                   searchPageImg={image} />
     });
 
+
     const addImagePage = this.state.images.map((item, index) => {
       return <AddImagePage
                   key={index}
                   addImageGroup={item} />
+
+    const activityPage = this.state.activityPage.map((item, index) => {
+      return <ActivityPage
+                key={index}
+                activityUserImage={item.activityUserImage}
+                activityUserName={item.activityUserName}
+                activityText={item.activityText}
+                activityCommentText={item.activityCommentText}
+                activityPostImage={item.activityPostImage} />
+
     });
 
     let mainWindow = null;
@@ -232,6 +342,7 @@ class App extends React.Component {
             </div>
           )
           break;
+
           case 'addImage':
             mainWindow = (
               <div>
@@ -244,6 +355,13 @@ class App extends React.Component {
               </div>
             )
             break;
+        case 'activity':
+          mainWindow = (
+            <div>
+              {activityPage}
+            </div>
+          )
+          break;
       default:
         break;
     }

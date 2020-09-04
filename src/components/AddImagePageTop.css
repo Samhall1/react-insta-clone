@@ -1,0 +1,30 @@
+.ImageOnFeed {
+    height: 410px;
+}
+
+.ImageTopContainer {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.ImageTopContainer p:first-child {
+    color: lightgrey;
+    margin-left: 10px;
+}
+
+.ImageTopContainer p:last-child {
+    color: lightgrey;
+    margin-right: 10px;
+
+}
+
+.draftImage {
+    height: 100px;
+}
+
+.recent {
+    color: lightgrey;
+    margin-left: 10px;
+}
+

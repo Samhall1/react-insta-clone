@@ -3,6 +3,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import './AddImageHeader.css';
 
 const AddImageHeader = (props) => {
+    
     return (
         <div className="container">
             <button className="button" onClick={props.cancelButton}>Cancel</button>

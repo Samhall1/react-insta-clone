@@ -12,7 +12,12 @@ import InstaStories from './components/InstaStories';
 import ProfileInfo from './components/ProfileInfo';
 import SearchPage from './components/SearchPage';
 import SearchPageImages from './components/SearchPageImages';
+
+import AddImagePage from './components/AddImagePage';
+import AddImagePageTop from './components/AddImagePageTop';
+
 import ActivityPage from './components/ActivityPage';
+
 
 class App extends React.Component {
   state = {
@@ -26,6 +31,10 @@ class App extends React.Component {
     ],
     header: <HomeHeader />,
     images: myImagesArray,
+    addImagePageGroup: {
+        addImageOnFeed: myImagesArray[26],
+        addImageDraft: myImagesArray[24]
+    },
     userNames: [
       {
         name: 'Sam',
@@ -218,6 +227,7 @@ class App extends React.Component {
     ]
   }
 
+
   switchMainWindowHandler = (event) => {
     if(event.target.className.includes('home')) {
       this.setState({
@@ -248,7 +258,11 @@ class App extends React.Component {
   }
 
   cancelButton = () => {
-    console.log("Button clicked")
+    console.log("Button clicked");
+    this.setState({
+      ...this.state,
+      activeWindow: 'home'
+    });
   };
 
   likeButtonHandle = () => {
@@ -288,6 +302,12 @@ class App extends React.Component {
                   searchPageImg={image} />
     });
 
+
+    const addImagePage = this.state.images.map((item, index) => {
+      return <AddImagePage
+                  key={index}
+                  addImageGroup={item} />
+
     const activityPage = this.state.activityPage.map((item, index) => {
       return <ActivityPage
                 key={index}
@@ -296,6 +316,7 @@ class App extends React.Component {
                 activityText={item.activityText}
                 activityCommentText={item.activityCommentText}
                 activityPostImage={item.activityPostImage} />
+
     });
 
     let mainWindow = null;
@@ -321,13 +342,19 @@ class App extends React.Component {
             </div>
           )
           break;
-        case 'addImage':
-          mainWindow = (
-            <div>
-              
-            </div>
-          )
-          break;
+
+          case 'addImage':
+            mainWindow = (
+              <div>
+                <div className='groupImageContainer'>
+                  <AddImagePageTop
+                    addImageOnFeed={this.state.addImagePageGroup.addImageOnFeed}
+                    addImageDraft={this.state.addImagePageGroup.addImageDraft} />
+                </div>
+                {addImagePage}
+              </div>
+            )
+            break;
         case 'activity':
           mainWindow = (
             <div>
@@ -339,9 +366,11 @@ class App extends React.Component {
         break;
     }
 
+    
+
     return (
       <React.Fragment>
-        <Header currentHeader={this.state.header}/>
+        <Header currentHeader={this.state.header} cancelButton={this.state.header.cancelButton} />
         <div className='main'>
           {mainWindow}
         </div>

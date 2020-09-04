@@ -18,6 +18,10 @@ import AddImagePageTop from './components/AddImagePageTop';
 
 import ActivityPage from './components/ActivityPage';
 
+import ProfileUserPageTop from './components/ProfileUserPageTop';
+import ProfileUserPageBottomImages from './components/ProfileUserPageBottomImages';
+import ProfileButtons from './components/ProfileButtons';
+
 
 class App extends React.Component {
   state = {
@@ -224,7 +228,14 @@ class App extends React.Component {
         activityCommentText: 'How was your week so far❓ 🧐🙈🙉🙊',
         activityPostImage: myImagesArray[12]
       }
-    ]
+    ],
+    profileUser: {
+      userImageProfile: myImagesArray[27],
+      usernameProfile: 'Code Nation',
+      postsProfile: '20',
+      followersProfile: '21',
+      followingProfile: '1000'
+    }
   }
 
 
@@ -320,6 +331,12 @@ class App extends React.Component {
 
     });
 
+    const profileUserImages = this.state.images.map((item, index) => {
+      return <ProfileUserPageBottomImages
+                key={index}
+                images={item} />
+    })
+
     let mainWindow = null;
     switch (this.state.activeWindow) {
       case 'home':
@@ -363,6 +380,26 @@ class App extends React.Component {
             </div>
           )
           break;
+        case 'userProfile':
+          mainWindow = (
+            <div>
+              <ProfileUserPageTop
+                userImageProfile={this.state.profileUser.userImageProfile}
+                usernameProfile={this.state.profileUser.usernameProfile}
+                postsProfile={this.state.profileUser.postsProfile}
+                followersProfile={this.state.profileUser.followersProfile}
+                followingProfile={this.state.profileUser.followingProfile} />
+                <div className='instaStoriesContainer'>
+                  {stories}
+                </div>
+                <ProfileButtons />
+                <div className='groupImageContainer'>
+                  {profileUserImages}
+                  
+                </div>
+            </div>
+          )
+        break;
       default:
         break;
     }

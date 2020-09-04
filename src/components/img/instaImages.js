@@ -25,5 +25,6 @@ import Post11 from './post11.jpg';
 import Post12 from './post12.jpg';
 import Post13 from './post13.jpg';
 import AddImage from './addImage.jpg';
+import ProfileImg from './profileImg.jpg';
 
-export const myImagesArray = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10, Image11, Image12, Image13, Post1, Post2, Post3, Post4, Post5, Post6, Post7, Post8, Post9, Post10, Post11, Post12, Post13, AddImage];
+export const myImagesArray = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10, Image11, Image12, Image13, Post1, Post2, Post3, Post4, Post5, Post6, Post7, Post8, Post9, Post10, Post11, Post12, Post13, AddImage,ProfileImg];

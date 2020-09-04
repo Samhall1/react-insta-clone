@@ -1,0 +1,11 @@
+.ProfileUserPageBottomImages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-content: flex-end;
+}
+
+.ProfileUserPageBottomImages img {
+    height: 120px;
+    
+}

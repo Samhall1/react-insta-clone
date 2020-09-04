@@ -307,6 +307,7 @@ class App extends React.Component {
       return <AddImagePage
                   key={index}
                   addImageGroup={item} />
+    });
 
     const activityPage = this.state.activityPage.map((item, index) => {
       return <ActivityPage
@@ -380,7 +381,5 @@ class App extends React.Component {
       </React.Fragment>
      );
   }
- 
 }
-
 export default App;

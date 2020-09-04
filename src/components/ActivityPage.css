@@ -1,0 +1,34 @@
+.activityPageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.activityPageContainerLeft {
+    display: flex;
+    flex-direction: row;
+}
+
+.img1 {
+    border-radius: 50%;
+    height: 35px;
+    padding: 15px;
+}
+
+.img2 {
+    height: 35px;
+    padding: 15px;
+    float: right;
+}
+
+.acrivityPageParagraphs p:first-child span {
+    font-weight: bold;
+}
+
+.acrivityPageParagraphs p { 
+    margin: 0;
+}
+
+.acrivityPageParagraphs p:first-child {
+    margin-top: 10px
+}
